@@ -1,0 +1,11 @@
+certs/**/*.key
+certs/**/*.p12
+**/__pycache__/
+.idea/
+build/
+
+client/*_pb2*.py
+
+
+**/*.srl
+.DS_Store

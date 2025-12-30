@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package adms;
+
+option java_package = "cl.uc.denis.adms";
+option java_multiple_files = true;
+
+service DeviceControl {
+  rpc SendTap (TapRequest) returns (ActionStatus);
+  
+  rpc StreamScreen (StreamConfig) returns (stream ScreenFrame);
+}
+
+message TapRequest {
+  int32 x = 1;
+  int32 y = 2;
+}
+
+message ActionStatus {
+  bool success = 1;
+  string error_message = 2;
+}
+
+message StreamConfig {
+  int32 fps = 1;
+  int32 quality = 2; // 1-100
+}
+
+message ScreenFrame {
+  bytes data = 1; // Raw JPEG/H264 bytes
+  int64 timestamp = 2;
+}
