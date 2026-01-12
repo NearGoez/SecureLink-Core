@@ -4,8 +4,14 @@ certs/**/*.p12
 .idea/
 build/
 
+.venv/
+.python-version
+
 client/*_pb2*.py
 
 
 **/*.srl
 .DS_Store
+
+proj_context.md
+
